@@ -1,0 +1,76 @@
+%---------------------------------------utils---------------------------------
+%--------------------------- insert sample input-output ----------------------
+\newcommand{\sampleInputOutput}[2]{
+    \begin{center}
+        \LTR
+        \renewcommand{\arraystretch}{1}
+        \begin{tabu} to 1.0\textwidth { | X[l] | X[l] | }
+            \hline
+            \rowfont{\color{navyBlue}}
+            \rowcolor{gray!10}
+            \begin{center}
+                \textbf{\rl{ورودی نمونه}}
+            \end{center}
+            & \begin{center}
+                \textbf{\rl{خروجی نمونه}}
+            \end{center}  \\
+            \hline
+            \lr{\texttt{#1}}  &
+            \lr{\texttt{#2}}  \\
+            \hline
+        \end{tabu}
+        \RTL
+    \end{center}
+}
+%------------------------------------------------------------------------------
+%--------------------------------------Graybox---------------------------------
+\newcommand{\grayBox}[1]{\colorbox{gray!10}{\lr{\texttt{#1}}}}
+%------------------------------------------------------------------------------
+
+
+%----------------------set code style and syntax highlighting -----------------
+\lstset{frame=tb,
+    language=[sharp]C,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=true,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=left,
+    numberstyle=  \tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{fireBrick},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3,
+    backgroundcolor=\color{mygray},
+}
+
+%--------------------------------------------------------------------------------
+
+%-------------------------------| sample in-out alternative |---------------------
+%-------------------------|------ DON'T USE THIS COMMAND --------|----------------
+\newcommand{\altSampleInputOutput}[2]{
+    \begin{center}
+        \LTR
+        \begin{tabularx}{\textwidth}{|X|X|}
+            \rowcolor{gray}
+            \hline
+            \begin{center}
+                \textbf{\rl{ورودی نمونه}}
+            \end{center}        
+            &     
+            \begin{center}
+                \textbf{\rl{خروجی نمونه}}
+            \end{center}  \\
+            \hline
+            \lr{\texttt{#1}} 
+            &
+            \lr{\texttt{#2}}  \\
+            \hline
+        \end{tabularx}
+        \RTL
+    \end{center}
+}
+%------------------------------------------------------------------------------
