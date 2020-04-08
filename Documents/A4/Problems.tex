@@ -1,0 +1,318 @@
+
+    \section{
+    لپ تاپ مناسب!
+    \grayBox{\textcolor{purple}{C\#}}
+     \grayBox{\textcolor{green}{Java}}
+    }
+    دیمو
+    \footnote{Dimo}
+    به تازگی به کامپیوتر علاقه پیدا کرده و قصد دارد خود را برای مسابقات برنامه نویسی آماده کند.
+    برای دیمو فقط ویژگی های 
+    حافظه،
+    پردازنده 
+    و گرافیک از یک لپتاپ مهم است.
+    او حافظه
+    (Memory) 
+    یک لپ تاپ را مهم ترین قسمت آن میداند.
+    حال برای شروع کار، میخواهد او را در خرید لپ تاپ کمک کنید و متد 
+    \grayBox{\textcolor{blue}{ChooseBest}}
+    را پیاده سازی کنید.
+    \subsection{پیاده سازی C\#}
+    \RTL
+    یک 
+    enum
+    به نام 
+    Config
+    تعریف کنید که شامل مقادیر 
+    Graphic
+    ،
+    Memory
+    و
+    Cpu
+    است.
+    میتوانید از قطعه کد زیر به استفاده کنید:
+    \LTR
+    \begin{lstlisting}
+      public enum Config
+      {
+          Graphic=/*TODO*/,
+          Memory =/*TODO*/,
+          Cpu =/*TODO*/
+      }
+    \end{lstlisting}
+    \RTL
+    متد 
+    \grayBox{\textcolor{blue}{ChooseBest}}
+    را در کلاس 
+    Program
+    قرار دهید 
+    که ورودی آن یک 
+    Config 
+    باشد و خروجی مناسب داشته باشد.
+    همانطور که گفتیم حافظه برای دیمو از هر چیزی مهم تر است؛
+    \begin{itemize}
+      
+        \item 
+    اگر این لپتاپ دارای هر سه ویژگی گرافیک، حافظه و پردازنده بود، 
+     \grayBox{Excellent} 
+    را خروجی دهد.
+    
+        \item
+        
+    اگر حافظه را به همراه فقط یکی از پردازنده و گرافیک داشت
+    ،
+    \grayBox{Very Good} 
+    را خروجی دهد.
+    
+    \item
+        
+    اگر فقط حافظه داشت
+    ،
+    \grayBox{Good}  
+    را خروجی دهد.
+    
+    \item
+        
+    اگر فقط گرافیک داشت
+    ،
+    \grayBox{Not Bad} 
+    را خروجی دهد.
+    
+    \item
+        
+    اگر فقط پردازنده داشت
+    ،
+    \grayBox{Not Bad} 
+    را خروجی دهد.
+    \end{itemize}
+    پس از پیاده سازی صحیح، تست 
+    \grayBox{\textcolor{dkgreen}{ChooseBest\_Tests}}
+    پاس خواهد شد.
+    \\
+    \subsection{پیاده سازی Java}
+    مانند پیاده سازی سی شارپ 
+    یک enum به نام Config با همان ویژگی های مذکور به علاوه سازنده اش تعریف کنید که آن را در متغیر 
+    ConfigValue
+    ذخیره کند.
+    هم چنین متد 
+    \grayBox{\textcolor{blue}{ChangeValue}}
+    را به گونه ای پیاده سازی کنید که یک ورودی از نوع 
+    int
+    بگیرد و مقدار Value 
+    را با آن برابر قرار دهد.
+    برای مفهوم شدن سوال، میتوانید از قطعه کد زیر استفاده کنید:
+    \LTR
+    \begin{lstlisting}
+      public enum Config 
+      {
+          Graphic(/*TODO*/),
+          Ram(/*TODO*/),
+          Cpu(/*TODO*/);
+            
+          public int ConfigValue;
+          public int Value;
+            
+          private Config(int configValue)
+          {
+              this.ConfigValue = configValue;
+          }
+    
+          //Implement ChangeValue
+      }
+
+    \end{lstlisting}
+    \RTL
+    پس از پیاده سازی صحیح سازنده و این متد، تست 
+     \grayBox{\textcolor{dkgreen}{Config\_Test}}
+     پاس خواهد شد.
+    
+    حال متد 
+    \grayBox{\textcolor{blue}{ChooseBest}}
+    را در کلاس 
+    App
+    بگونه ای پیاده سازی کنید  
+    که ورودی آن یک 
+    Config 
+    باشد و خروجی مناسب داشته باشد. 
+    
+    
+    پس از پیاده سازی صحیح، تست 
+    \grayBox{\textcolor{dkgreen}{ChooseBest\_Test}}
+    پاس خواهد شد.
+    \section{جابجایی لپتاپ!}
+    دیمو که از خرید لپتاپ جدیدش خیلی راضی نشده، تصمیم گرفته بعضی از اجزای لپتاپ جدیدش را تعویض کند و از اجزای لپتاپ قبلی خود استفاده کند.
+    برای کمک به او ابتدا کلاس های زیر را پیاده سازی کنید؛
+    \subsection{
+    کلاس Graphic
+    \grayBox{\textcolor{purple}{C\#}}
+    }
+    هر کارت گرافیک دارای ویژگی های 
+    \begin{itemize}
+        \item 
+            \grayBox{Size}
+             از نوع 
+            int 
+        \item
+            
+            \grayBox{Coprocessor}
+            از نوع
+            string
+        \item
+        
+            \grayBox{Type}
+            از نوع 
+            int 
+    \end{itemize}
+    این کلاس را به همراه سازنده(Constructor) اش به گونه ای پیاده سازی کنید که همه 
+    \grayBox{Property}
+    ها، مقدار null را نیز بپذیرد.
+    پس از پیاده سازی صحیح این کلاس،
+    تست
+    \grayBox{\textcolor{dkgreen}{GraphicConstructor\_Tests}}
+    پاس خواهد شد.
+    
+    \subsection{
+    کلاس Memory
+    \grayBox{\textcolor{purple}{C\#}}
+    }
+    هر کارت حافظه دارای ویژگی های 
+    \begin{itemize}
+        \item 
+            \grayBox{Capacity}
+             از نوع 
+            int 
+        \item
+            
+            \grayBox{Pins}
+            از نوع
+            int
+        \item
+        
+            \grayBox{Type}
+            از نوع 
+            int 
+    \end{itemize}
+    این کلاس را به همراه سازنده(Constructor) اش به گونه ای پیاده سازی کنید که همه 
+    \grayBox{Property}
+    ها، مقدار null را نیز بپذیرد.
+    پس از پیاده سازی صحیح این کلاس،
+    تست
+    \grayBox{\textcolor{dkgreen}{MemoryConstructor\_Tests}}
+    پاس خواهد شد.
+     
+    \subsection{
+    کلاس Cpu
+    \grayBox{\textcolor{purple}{C\#}}
+    }
+    هر پردازنده دارای ویژگی های 
+    \begin{itemize}
+        \item 
+            \grayBox{Model}
+             از نوع 
+            string 
+        \item
+            
+            \grayBox{Weight}
+            از نوع
+            double
+        \item
+        
+            \grayBox{Speed}
+            از نوع 
+            string 
+    \end{itemize}
+    این کلاس را به همراه سازنده(Constructor) اش به گونه ای پیاده سازی کنید که همه 
+    \grayBox{Property}
+    ها، مقدار null را نیز بپذیرد.
+    پس از پیاده سازی صحیح این کلاس،
+    تست
+    \grayBox{\textcolor{dkgreen}{CpuConstructor\_Tests}}
+    پاس خواهد شد.
+    
+    \subsection{
+    جابجایی
+    \grayBox{\textcolor{purple}{C\#}}
+    }
+    حال که کلاس های 
+    \grayBox{Graphic}
+    ،
+    \grayBox{Memory}
+    و
+    \grayBox{Cpu}
+    را به درستی پیاده سازی کردید،
+    به دیمو کمک کنید که اجزای لپتاپ جدیدش را با قبلی عوض کند.
+    \\
+    متد 
+    \grayBox{\textcolor{blue}{SwapConfigs}}
+    را در کلاس Program
+    به گونه ای پیاده سازی کنید که دو object بگیرد و این دو را با یکدیگر عوض کند برای مفهوم تر شدن سوال به تست ها مراجعه کنید.
+    پس از پیاده سازی صحیح این متد،
+    تست
+    \grayBox{\textcolor{dkgreen}{SwapConfigs\_Tests}}
+    پاس خواهد شد.
+    
+    \newpage
+    \section{ساختار حافظه!}
+    دیمو به خاطر علاقه زیادش به حافظه، تصمیم گرفته به عنوان اولین تمرین برنامه نویسی خود، با مفاهیم آن کار کند.
+    او می خواهد بداند که داده های ارجاعی 
+    (\grayBox{Reference Type})
+    و 
+    مقداری
+    (\grayBox{Value Type})
+    چگونه حافظه را اشغال میکنند.
+    
+    \subsection{
+        آشنایی با Stack
+        \grayBox{\textcolor{purple}{C\#}}
+    }
+    نوع داده ای 
+    \grayBox{\textcolor{blue}{Struct\_Size5}}
+    را به گونه ای پیاده سازی کنید 
+    که اندازه متغیر این نوع داده ای،
+    5 
+    باشد.
+    \\
+    سپس به طور مشابه 
+    نوع های داده ای
+    \grayBox{\textcolor{blue}{Struct\_Size10}}
+    ،
+    \grayBox{\textcolor{blue}{Struct\_Size12}}
+    و
+    \grayBox{\textcolor{blue}{Struct\_Size105}}
+    را نیز پیاده سازی کنید.
+    پس از پیاده سازی صحیح،
+    تست
+    \grayBox{\textcolor{dkgreen}{StructSize\_Tests}}
+    پاس خواهد شد.
+    
+    \subsection{
+        آشنایی با Heap
+        \grayBox{\textcolor{purple}{C\#}}
+    }
+    کلاس
+    \grayBox{MemoryHeap}
+    را به همراه متدهایش
+    پیاده سازی کنید.
+    \\
+    متد 
+    \grayBox{\textcolor{blue}{Allocate}}
+    یک عدد میگیرد 
+    و به اندازه آن
+    (با واحد 
+    byte
+    )
+    حافظه را اشغال میکند.
+    \\
+    متد 
+    \grayBox{\textcolor{blue}{DeAllocate}}
+    که با فراخوانی آن حافظه که اشغال شده را خالی میکند.
+    برای مفهوم شدن سوال به تست ها مراجعه کنید.
+    پس از پیاده سازی صحیح،
+    تست
+    \grayBox{\textcolor{dkgreen}{HeapSize\_Tests}}
+    پاس خواهد شد.
+    \\
+    \\
+    \\
+    \\
+    
