@@ -1,0 +1,335 @@
+\section{
+        \grayBox{\textcolor{purple}{APKALA}}
+        \grayBox{\textcolor{blue}{}}
+    }
+    \RTL
+        \subsection{\rl{کلاس} \lr{Product}}
+    در اینجا کمی تبدیل فضای مسئله به فضای راه‌حل با استفاده از زبان شی‌گرای سی‌شارپ را تمرین می‌کنیم:
+    
+    کلاس محصول دارای ویژگی های 
+    مولفه مشخصه(
+     \grayBox{\textcolor{navyBlue}{Id}}
+    )
+    ،
+    نام(
+    \grayBox{\textcolor{navyBlue}{Name}}
+    )
+    ،
+    قیمت(
+    \grayBox{\textcolor{navyBlue}{Price}}
+    )
+    و 
+    نمره از لحاظ محبوبیت(
+    \grayBox{\textcolor{navyBlue}{Rate}}
+    )
+    است که یک محصول را از دیگری تمایز میدهد.
+    
+    
+     ممکن است موجودیتی که در نظر می‌گیریم ویژگی(های) دیگری هم داشته باشد اما ما فقط ویژگی‌هایی را در نظر می‌گیریم که به حل مسئله کمک می‌کند.
+    
+    \textbf{گام اول:}
+     برای هر 
+    \grayBox{\textcolor{navyBlue}{property}}ای 
+    که در کلاس وجود دارد 
+    \grayBox{\textcolor{navyBlue}{getter}}
+    و 
+    \grayBox{\textcolor{navyBlue}{setter}}
+    مناسب بنویسید.
+    
+    \textbf{گام دوم: }
+    شما باید سازنده
+    (\grayBox{\textcolor{navyBlue}{constructor}}) 
+    این کلاس را تکمیل کنید تا شی‌ای که از کلاس ساخته می‌شود معتبر باشد یعنی هر 
+    \grayBox{\textcolor{navyBlue}{Product}}ای 
+    که ساخته می‌شود لزوما دارای ویژگی های ذکر شده باشد.
+    
+    پس از پیاده‌سازی صحیح سازنده‌ی این کلاس تستِ 
+    \grayBox{\textcolor{dkgreen}{ProductConstructorTest}}
+    پاس خواهد شد.
+    
+    بعد از پیاده‌سازی این کلاس و پاس شدن تست‌های آن کار شما با این کلاس و فایل آن تمام شده است. دیگر نیازی به تغییر این کد نخواهید داشت.
+%---------------------------------------------------------------
+    
+    \subsection{\rl{کلاس} \lr{Categoty}}
+    
+    کلاس دسته بندی دارای ویژگی های 
+    مولفه مشخصه(
+     \grayBox{\textcolor{navyBlue}{Id}}
+    )
+    و 
+    محصولات(
+    \grayBox{\textcolor{navyBlue}{Products}}
+    )
+    است که یک دسته را از دیگری تمایز میدهد.
+    برای مثال تمام گوشی های موبایل در یک دسته بندی قرار گیرند.
+    \\
+    \textbf{گام اول:}
+     برای هر 
+    \grayBox{\textcolor{navyBlue}{property}}ای 
+    که در کلاس وجود دارد 
+    \grayBox{\textcolor{navyBlue}{getter}}
+    و 
+    \grayBox{\textcolor{navyBlue}{setter}}
+    مناسب بنویسید.
+    \\
+    \textbf{گام دوم: }
+    شما باید سازنده
+    (\grayBox{\textcolor{navyBlue}{constructor}}) 
+    این کلاس را تکمیل کنید تا شی‌ای که از کلاس ساخته می‌شود معتبر باشد یعنی هر 
+    \grayBox{\textcolor{navyBlue}{Category}}ای 
+    که ساخته می‌شود لزوما دارای ویژگی های ذکر شده باشد.
+    
+    پس از پیاده‌سازی صحیح سازنده‌ی این کلاس تستِ 
+    \grayBox{\textcolor{dkgreen}{CategoryConstructorTest}}
+    پاس خواهد شد.
+    \\
+    \textbf{گام سوم: }
+    شما باید متد 
+    \grayBox{\textcolor{navyBlue}{AddProduct}}
+    را بگونه ای پیاده سازی کنید که ورودی آن یک محصول باشد و با فراخوانی متد آن محصول را به محصولات خود اضافه کند.
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{CategoryAddProductTest}}
+    پاس خواهد شد.
+\\
+    \textbf{گام چهارم: }
+    شما باید متد 
+    \grayBox{\textcolor{navyBlue}{FilterByPrice}}
+    را بگونه ای پیاده سازی کنید که دو ورودی از جنس 
+    \grayBox{\textcolor{blue}{int}}
+    بگیرد و تمامی محصولات آن دسته بندی، که قیمتشان بین دو عدد ورودی است را به عنوان خروجی بازگرداند.
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{CategoryFilterByPriceTest}}
+    پاس خواهد شد.
+    
+%---------------------------------------------------------------
+    \subsection{\rl{کلاس} \lr{Cart}}
+    کلاس سبد خرید دارای ویژگی های 
+    نام صاحب سبد(
+    \grayBox{\textcolor{navyBlue}{Owner}}
+    )
+    و 
+    محصولات(
+    \grayBox{\textcolor{navyBlue}{Products}}
+    )
+    است که یک دسته را از دیگری تمایز میدهد.
+    \\
+    \textbf{گام اول:}
+     برای هر 
+    \grayBox{\textcolor{navyBlue}{property}}ای 
+    که در کلاس وجود دارد 
+    \grayBox{\textcolor{navyBlue}{getter}}
+    و 
+    \grayBox{\textcolor{navyBlue}{setter}}
+    مناسب بنویسید.
+    \\
+    \textbf{گام دوم: }
+    شما باید سازنده
+    (\grayBox{\textcolor{navyBlue}{constructor}}) 
+    این کلاس را تکمیل کنید تا شی‌ای که از کلاس ساخته می‌شود معتبر باشد یعنی هر 
+    \grayBox{\textcolor{navyBlue}{Cart}}ای 
+    که ساخته می‌شود لزوما دارای ویژگی های ذکر شده باشد.
+    
+    پس از پیاده‌سازی صحیح سازنده‌ی این کلاس تستِ 
+    \grayBox{\textcolor{dkgreen}{CartConstructorTest}}
+    پاس خواهد شد.
+    \\
+    \textbf{گام سوم: }
+    شما باید متد 
+    \grayBox{\textcolor{navyBlue}{AddProduct}}
+    را بگونه ای پیاده سازی کنید که ورودی آن یک محصول باشد و با فراخوانی متد آن محصول را به محصولات خود اضافه کند.
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{CartAddProductTest}}
+    پاس خواهد شد.
+    \\
+    \textbf{گام چهارم: }
+    شما باید متد 
+    \grayBox{\textcolor{navyBlue}{CalculatePrice}}
+    را بگونه ای پیاده سازی کنید که 
+    با فراخوانی آن 
+    قیمت کل آن سبد خرید را بازگرداند.
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{CartCalculatePriceTest}}
+    پاس خواهد شد.
+%---------------------------------------------------------------
+    \subsection{\rl{کلاس} \lr{Store}}
+    کلاس فروشگاه دارای ویژگی های 
+    نام (
+    \grayBox{\textcolor{navyBlue}{Name}}
+    )
+    ، 
+    دسته بندی ها(
+    \grayBox{\textcolor{navyBlue}{Categories}}
+    )
+    و
+    سبد های خرید(
+    \grayBox{\textcolor{navyBlue}{Carts}}
+    )
+    است که یک فروشگاه را از دیگری تمایز میدهد.
+    \\
+    \textbf{گام اول:}
+     برای هر 
+    \grayBox{\textcolor{navyBlue}{property}}ای 
+    که در کلاس وجود دارد 
+    \grayBox{\textcolor{navyBlue}{getter}}
+    و 
+    \grayBox{\textcolor{navyBlue}{setter}}
+    مناسب بنویسید.
+    \\
+    \textbf{گام دوم: }
+    شما باید سازنده
+    (\grayBox{\textcolor{navyBlue}{constructor}}) 
+    این کلاس را تکمیل کنید تا شی‌ای که از کلاس ساخته می‌شود معتبر باشد یعنی هر 
+    \grayBox{\textcolor{navyBlue}{Store}}ای 
+    که ساخته می‌شود لزوما دارای ویژگی های ذکر شده باشد.
+    
+    پس از پیاده‌سازی صحیح سازنده‌ی این کلاس تستِ 
+    \grayBox{\textcolor{dkgreen}{StoreConstructorTest}}
+    پاس خواهد شد.
+    \\
+    \textbf{گام سوم: }
+    شما باید متد 
+    \grayBox{\textcolor{navyBlue}{AddCart}}
+    را بگونه ای پیاده سازی کنید که ورودی آن یک سبد خرید باشد و با فراخوانی متد آن سبد خرید را به لیست سبد های خود اضافه کند.
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{StoreAddCartTest}}
+    پاس خواهد شد.
+    \\
+    \textbf{گام چهارم: }
+    شما باید متد 
+    \grayBox{\textcolor{navyBlue}{AddCategory}}
+    را بگونه ای پیاده سازی کنید که 
+    ورودی آن یک دسته بندی باشد و با فراخوانی متد، آن دسته بندی را به لیست سبد های خود اضافه کند.
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{StoreAddCategoryTest}}
+    پاس خواهد شد.
+    \\
+    \textbf{گام پنجم: }
+    شما باید متد 
+    \grayBox{\textcolor{navyBlue}{Bestselling}}
+    را به گونه ای پیاده سازی کنید که 
+    با فراخوانی آن، محصولی که از همه بیشتر به فروش رفته را بازگرداند.
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{StoreBestsellingTest}}
+    پاس خواهد شد.
+    \\
+    \textbf{گام ششم: }
+    شما باید متد 
+    \grayBox{\textcolor{navyBlue}{MostPopular}}
+    را به گونه ای پیاده سازی کنید که 
+    با فراخوانی آن، محصولی که از همه محبوب تر است، را بازگرداند.
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{StoreMostPopularTest}}
+    پاس خواهد شد.
+\LTR
+
+
+%---------------------------------------------------------------
+\RTL
+\newpage
+    \section{
+        \grayBox{\textcolor{purple}{Telegram}}
+        \grayBox{\textcolor{blue}{}}
+    }
+    \RTL
+ 
+    \subsection{\rl{کلاس} \lr{Person}}
+    
+    این کلاس دارای ویژگی های 
+    مولفه مشخصه (
+    \grayBox{\textcolor{navyBlue}{ID}}
+    )
+    ، 
+    نام(
+    \grayBox{\textcolor{navyBlue}{Name}}
+    )
+    ،
+    مخاطبین(
+    \grayBox{\textcolor{navyBlue}{Contacts}}
+    )
+    و 
+    چت(
+    \grayBox{\textcolor{navyBlue}{Chats}}
+    ) است.
+    لازم به ذکر است که هر عضو، مولفه مشخصه ی منحصر به فردی دارد که او را با بقیه اعضا تمایز میدهد.
+    
+    \RTL
+    
+    
+    \textbf{گام اول: }
+    شما باید سازنده
+    (\grayBox{\textcolor{navyBlue}{constructor}}) 
+    این کلاس را تکمیل کنید تا شی‌ای که از کلاس ساخته می‌شود معتبر باشد یعنی هر 
+    \grayBox{\textcolor{navyBlue}{Person}}ای 
+    که ساخته می‌شود لزوما دارای ویژگی های ذکر شده باشد.
+    
+    پس از پیاده‌سازی صحیح سازنده‌ی این کلاس تستِ 
+    \grayBox{\textcolor{dkgreen}{test\_PersonConstructor}}
+    پاس خواهد شد.
+    \\
+    \textbf{گام دوم: }
+    متد 
+    \grayBox{\textcolor{navyBlue}{AddContact}}
+    را به گونه ای پیاده سازی کنید که 
+    یک عضو(Person) بگیرد،
+    و  اگر با آن عضو قبلاً مخاطب نبوده، آن عضو را به مخاطبین خود اضافه کند.
+    
+    
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{test\_PersonAddContact}}
+    پاس خواهد شد.
+    
+    \RTL
+ 
+    \subsection{\rl{کلاس} \lr{Message}}
+    
+    این کلاس دارای ویژگی های 
+    مبدا (
+    \grayBox{\textcolor{navyBlue}{Source}}
+    )
+    ، 
+    مقصد(
+    \grayBox{\textcolor{navyBlue}{Destination}}
+    )
+    و
+    متن پیام(
+    \grayBox{\textcolor{navyBlue}{Context}}
+    )
+    است.
+    
+    
+    \textbf{گام اول: }
+    شما باید سازنده
+    (\grayBox{\textcolor{navyBlue}{constructor}}) 
+    این کلاس را تکمیل کنید تا شی‌ای که از کلاس ساخته می‌شود معتبر باشد یعنی هر 
+    \grayBox{\textcolor{navyBlue}{Message}}ای 
+    که ساخته می‌شود لزوما دارای ویژگی های ذکر شده باشد.
+    
+    پس از پیاده‌سازی صحیح سازنده‌ی این کلاس تستِ 
+    \grayBox{\textcolor{dkgreen}{test\_MessageConstructor}}
+    پاس خواهد شد.
+
+    \subsection{\rl{ارتباط دو کلاس} }
+    شما باید متد
+    \grayBox{\textcolor{navyBlue}{SendMessage}}
+    را برای کلاس Person
+    را بگونه ای پیاده سازی کنید 
+    که با گرفتن یک پیام(Message)
+    ،
+    به چت هر دو نفر، آن پیام را اضافه کند.
+    همچنین اگر دو نفر با یکدیگر مخاطب نبودند
+،   
+ابتدا
+    یکدیگر را به مخاطبین خود اضافه کنند.
+     
+     
+    پس از پیاده‌سازی صحیح تستِ 
+    \grayBox{\textcolor{dkgreen}{test\_SendMessage}}
+    پاس خواهد شد.
