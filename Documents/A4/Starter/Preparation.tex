@@ -1,0 +1,52 @@
+
+    \section{آماده سازی های اولیه}
+    
+        \subsection{ساخت پروژه ی C\#}
+        برای ایجاد پروژه C\# کافی است کد زیر را در ترمینال خود اجرا کنید: 
+        \LTR
+        \begin{lstlisting}
+        mkdir A4_cs
+        cd A4_cs
+        dotnet new sln
+        mkdir A4_cs
+        cd A4_cs
+        dotnet new console
+        cd ..
+        dotnet sln add A4_cs\A4_cs.csproj
+        mkdir A4_cs.Tests
+        cd A4_cs.Tests
+        dotnet new mstest
+        dotnet add reference ..\A4_cs\A4_cs.csproj
+        cd ..
+        dotnet sln add A4_cs.Tests\A4_cs.Tests.csproj
+        
+        \end{lstlisting}
+    
+        \RTL
+        
+        \subsection{قواعد نام گذاری}
+        
+            قواعد نام‌گذاری تمرین را از جدول
+            \ref{table:namingConvention}
+            مطالعه کنید.
+            \begin{table}[ht]
+        	\centering
+        	\caption{\rl{قراردادهای نام‌گذاری تمرین}}\label{table:namingConvention}	\begin{latin}
+        	\begin{tabular}{|c|c|c|c|c|c|}
+        		\hline
+        		\rowcolor[HTML]{9698ED} 
+        		\multicolumn{3}{|c|}{\cellcolor{mygray} Naming conventions}             \\ \hline 
+        		Branch & Directory & Pull Request \\ \hline
+        		
+        		\texttt{fb\_A4} & \texttt{A4}        & \texttt{A4}          \\ \hline
+        	\end{tabular}
+            \end{latin}
+            \end{table}
+            \\
+            \grayBox{\textcolor{blue}{*}}
+            در کل یک دیرکتوری داخل Assignments به نام A4 بسازید و داخل آن،دو دیرکتوری به نام های
+            A4\_cs
+            و
+            A4\_java
+            داشته باشید و فایل های مربوط به هر یک را داخل دیرکتوری مربوطه بگذارید.
+    
