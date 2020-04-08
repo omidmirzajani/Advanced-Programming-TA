@@ -1,0 +1,49 @@
+
+    \section{آماده سازی های اولیه}
+    
+        \subsection{ساخت پروژه ی C\#}
+        برای ایجاد پروژه C\# کافی است کد زیر را در ترمینال خود اجرا کنید: 
+        \LTR
+        \begin{lstlisting}
+        mkdir A2_cs
+        cd A2_cs
+        dotnet new sln
+        mkdir A2_cs
+        cd A2_cs
+        dotnet new console
+        cd ..
+        dotnet sln add A2_cs\A2_cs.csproj
+        mkdir A2_cs.Tests
+        cd A2_cs.Tests
+        dotnet new mstest
+        dotnet add reference ..\A2_cs\A2_cs.csproj
+        cd ..
+        dotnet sln add A2_cs.Tests\A2_cs.Tests.csproj
+        
+        \end{lstlisting}
+    
+        \RTL
+        
+        \subsection{قواعد نام گذاری}
+        
+            قواعد نام‌گذاری تمرین را از جدول
+            \ref{table:namingConvention}
+            مطالعه کنید.
+            \begin{table}[ht]
+        	\centering
+        	\caption{\rl{قراردادهای نام‌گذاری تمرین}}\label{table:namingConvention}	\begin{latin}
+        	\begin{tabular}{|c|c|c|c|c|c|}
+        		\hline
+        		\rowcolor[HTML]{9698ED} 
+        		\multicolumn{3}{|c|}{\cellcolor{mygray} Naming conventions}             \\ \hline 
+        		Branch & Directory & Pull Request \\ \hline
+        		
+        		\texttt{fb\_A2} & \texttt{A2}        & \texttt{A2}          \\ \hline
+        	\end{tabular}
+            \end{latin}
+            \end{table}
+            \\
+            \grayBox{\textcolor{blue}{*}}
+            در کل یک دیرکتوری در شاخه Assignments به نام A2 بسازید و داخل آن،دو دیرکتوری به نام های A2\_cs , A2\_python داشته باشید و فایل های مربوط به هر زبان را داخل دیرکتوری مربوطه بگذارید.
+            
+     
