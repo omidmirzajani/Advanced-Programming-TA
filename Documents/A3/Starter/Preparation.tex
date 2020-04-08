@@ -1,0 +1,50 @@
+
+    \section{آماده سازی های اولیه}
+    
+        \subsection{ساخت پروژه ی C\#}
+        برای ایجاد پروژه C\# کافی است کد زیر را در ترمینال خود اجرا کنید: 
+        \LTR
+        \begin{lstlisting}
+        mkdir A3_cs
+        cd A3_cs
+        dotnet new sln
+        mkdir A3_cs
+        cd A3_cs
+        dotnet new console
+        cd ..
+        dotnet sln add A3_cs\A3_cs.csproj
+        mkdir A3_cs.Tests
+        cd A3_cs.Tests
+        dotnet new mstest
+        dotnet add reference ..\A3_cs\A3_cs.csproj
+        cd ..
+        dotnet sln add A3_cs.Tests\A3_cs.Tests.csproj
+        
+        \end{lstlisting}
+    
+        \RTL
+        
+        \subsection{قواعد نام گذاری}
+        
+            قواعد نام‌گذاری تمرین را از جدول
+            \ref{table:namingConvention}
+            مطالعه کنید.
+            \begin{table}[ht]
+        	\centering
+        	\caption{\rl{قراردادهای نام‌گذاری تمرین}}\label{table:namingConvention}	\begin{latin}
+        	\begin{tabular}{|c|c|c|c|c|c|}
+        		\hline
+        		\rowcolor[HTML]{9698ED} 
+        		\multicolumn{3}{|c|}{\cellcolor{mygray} Naming conventions}             \\ \hline 
+        		Branch & Directory & Pull Request \\ \hline
+        		
+        		\texttt{fb\_A3} & \texttt{A3}        & \texttt{A3}          \\ \hline
+        	\end{tabular}
+            \end{latin}
+            \end{table}
+            \\
+            \grayBox{\textcolor{blue}{*}}
+            در کل یک دیرکتوری داخل Assignments به نام A3 بسازید و داخل آن،یک دیرکتوری به نام  A3\_cs داشته باشید و فایل های مربوط به آن را داخل دیرکتوری مربوطه بگذارید.
+            
+     
+   
