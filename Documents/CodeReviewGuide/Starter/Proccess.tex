@@ -1,0 +1,147 @@
+
+\section{\rl{روند بازبینی کد برای درس برنامه‌سازی پیشرفته}}
+با توجه به اهمیت بازبینی کد در آموزش در این درس از ابتدای ترم بازبینی کد بخشی از روند یادگیری برای شما می‌باشد. برای آشنایی با مراحل اضافه کردن بازبیننده کد به پروژه
+\lr{AP98992}
+در سایت
+\lr{\href{https://dev.azure.com/}{Azure DevOps}}
+به مراحل ذکر شده در ضمیمه
+\ref{sec:add_reviewer}
+مراجعه کنید.
+\subsection{\rl{مرحله‌ی اول: تحویل تمرین}}
+\begin{itemize}
+	\item
+	      تحویل اولیه تمرین با کامل شدن
+	      \grayBox{Pull Request}
+	      به
+	      \grayBox{master}
+	      انجام می‌شود. دقت کنید که هنگام کامل کردن
+	      \grayBox{Pull Request}
+	      گزینه
+	      \grayBox{"Delete Source Branch"}
+	      انتخاب نشده باشد.
+	\item
+	      برای اطمینان از کامل شدن درست
+	      \grayBox{Pull Request}
+	      در کامپیوتر خود دستورات زیر را اجرا کنید و از وجود پروژه خود در شاخه
+	      \grayBox{master}
+	      اطمینان حاصل کنید.
+	      \begin{latin}
+		      \begin{lstlisting}[frame=tb,basicstyle={\small\ttfamily},keywordstyle=\color{blue},keywords={checkout, pull}]
+  git checkout master
+  git pull
+			\end{lstlisting}
+	      \end{latin}
+	\item
+	      چنانچه به اشتباه گزینه
+	      \grayBox{Delete Source Branch}
+	      را انتخاب کرده باشید، لازم است با دستور زیر تمام شاخه‌های محلی را بار دیگر را روی سرور
+	      \grayBox{push}
+	      کنید.
+	      \begin{latin}
+		      \begin{lstlisting}[frame=tb,basicstyle={\small\ttfamily},keywordstyle=\color{blue},keywords={checkout, pull, push, origin}]
+  git push --all origin
+			\end{lstlisting}
+	      \end{latin}
+\end{itemize}
+\subsection{\rl{مرحله دوم: بازبینی کد}}
+\begin{itemize}
+	\item
+	      مهلت بازبینی کد یک هفته بعد از تحویل تمرین می‌باشد.
+	\item
+	      اولین مرحله مطلع‌کردن بازبیننده کد از اتمام تمرین و تقاضای بازبینی کد می‌باشد.
+	\item
+	      سپس بازبیننده کد بعد یک روز نتیجه بازبینی کد را در قالب کامنت‌ها لازم و نمره اولیه تمرین منعکس می‌کند.
+	      \begin{latin}
+		      \begin{itemize}
+			      \item
+			            Grade1://<AssignmentNumber>/<FirstGrade>
+			      \item
+			            e.g., Grade1://A1/90
+		      \end{itemize}
+	      \end{latin}
+	\item
+	      بعد از گرفتن کامنت‌ها، دانشجویان یک روز فرصت دارند تغییرات لازم در کد را برای جلب نظر بازبیننده کد در همان شاخه تمرین اعمال کرده و
+	      \grayBox{Pull Request}
+	      جدید با  نام
+	      \grayBox{Pull Request}
+	      اصلی/قبلی به‌علاوه‌ی پسوند
+	      \grayBox{(\_review)}
+	      برای فرستادن به
+	      \grayBox{master}
+		ایجاد کنند.
+		مثال:
+		\begin{latin}		
+			\begin{table}[ht]
+				\centering
+				\begin{tabular}{c|c}
+				\rowcolor[HTML]{CBCEFB} 
+				Pull Request name before review & Pull Request name after review \\ \hline
+				\rowcolor[HTML]{EFEFEF} 
+				\texttt{HW3} & \texttt{HW3\textcolor{magenta}{\_review}} \\ \hline
+				\texttt{HW4} & \texttt{HW4\textcolor{magenta}{\_review}} \\ \hline
+				\rowcolor[HTML]{EFEFEF} 
+				\texttt{HW5} & \texttt{HW5\textcolor{magenta}{\_review}}
+				\end{tabular}
+				\end{table}
+		\end{latin}
+
+	\item
+	      این
+	      \grayBox{Pull Request}
+	      تا پایان مهلت بازبینی کد بازمانده و روند بازبینی کد با مهلت ۲۴ ساعت برای پاسخ از هر دو طرف ادامه پیدا می‌کند. در نهایت نمره باز‌بینی شده به صورت زیر در
+	      \grayBox{Pull Request}
+	      جدید منعکس می‌شود. نمره نهایی شما بر اساس نمره
+	      \grayBox{Pull Request}
+	      اولیه و
+	      \grayBox{Pull Request}
+	      جدید محاسبه خواهد شد.
+	      \begin{latin}
+		      \begin{itemize}
+			      \item
+			            Grade2://<AssignmentNum>/<FinalGrade>/<TotalComments>/<AddressedComments>
+			      \item
+			            e.g., Grade2://A1/90/10/5
+			      \item
+			            \begin{persian}
+				            عدد
+				            \grayBox{AddressedComments}
+				            نشان‌گر تعداد کامنت‌هایی است که دانشجو مطابق نظر و رضایت بازبیننده کد تغییرات لازم را انجام یا جواب مناسب داده باشد.
+			            \end{persian}
+		      \end{itemize}
+	      \end{latin}
+	\item
+	      در نهایت
+	      \grayBox{Pull Request}
+	      دوم شما باید قبل از اتمام مهلت بازبینی کد کامل شده و در
+	      شاخه‌ی
+	      \grayBox{master}
+	      ادغام
+	      (\grayBox{merge})
+	      شود.
+	\item
+	      نمره نهایی شما بر اساس میزان مشارکت فعال شما در روند بازبینی‌کد خواهد بود.
+\end{itemize}
+\subsection{\rl{الگوهای ارزیابی}}
+نمره تمرین‌ها بر اساس جدول زیر محاسبه می‌شود. این جدول به تناسب تمرین در مستند تمرین بروز خواهد شد.
+\begin{latin}
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			\rowcolor[HTML]{FFFFC7}
+			Subject                       & \begin{tabular}[c]{@{}c@{}}Program \\ logic\end{tabular} & \begin{tabular}[c]{@{}c@{}}Unit \\ tests\end{tabular} & \begin{tabular}[c]{@{}c@{}}Meaningful variable \\ and method names\\  and comments \\ where necessary\end{tabular} & \begin{tabular}[c]{@{}c@{}}Observe coding\\  conventions in \\ the names of \\ variables and \\ methods\end{tabular} & no redundancy & \begin{tabular}[c]{@{}c@{}}small \\ methods\end{tabular} \\ \hline
+			\cellcolor[HTML]{FFFFC7}Grade & 30                        & 30                        & 10                        & 10                         & 10            & 10                         \\ \hline
+		\end{tabular}
+	\end{table}
+\end{latin}
+\textbf{توجه:}
+نمره‌ی قسمت‌های
+\lr{Program logic}
+و
+\lr{Unit tests}
+فقط در صورتی داده می‌شود که برای شاخه‌ی
+\grayBox{master}
+راستی‌آزمایی ساخت
+\LTRfootnote{Build validation}
+فعال باشد.
+هم‌چنین درصورت عدم قرارداد‌های نام‌گذاری برای شاخه‌ها، دایرکتوری و... نمره کسر خواهد شد.
