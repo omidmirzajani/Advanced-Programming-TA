@@ -1,0 +1,304 @@
+
+    \section{
+    نسل جدید
+    \grayBox{\textcolor{purple}{C\#}}
+    }
+    \textbf{دیمو}
+    \footnote{Dimo}
+    که برنامه نویسی را به تازگی شروع کرده، قصد دارد در این روزهای قرنطینه از وقت خود استفاده کند.
+    از آنجا که کارکنان بیمارستان درگیر مقابله با ویروس Covid-19
+    هستند، برای جمع آوری اطلاعات بخش های مختلف، نیرو و زمان کافی ندارند.
+    \\ 
+    برای همین از او خواسته اند که اطلاعات خواسته شده رو از بخش های مختلف برایشان استخراج کند.
+    \subsection{
+    واسط ها
+    \footnote{Interfaces}
+    }
+        \subsubsection{IPerson}
+        این واسط برای پیاده سازی افراد مختلف جامعه به کار می رود که شامل ویژگی های:
+        \begin{itemize}
+        \item 
+            \grayBox{Firstname}
+            (نام)
+             از نوع 
+            string 
+        \item
+            \grayBox{Lastname}
+            (نام خانوادگی)
+            از نوع
+            string
+        \end{itemize}
+        است.
+        پس هر شخصی که وجود داشته باشد، الزاماً دارای ویژگی های ذکر شده هست.
+        
+        \subsubsection{IDoctor}
+        این واسط برای پیاده سازی پزشکان بیمارستان به کار می رود که شامل ویژگی های:
+        \begin{itemize}
+        \item 
+            \grayBox{Field}
+            (زمینه کاری)
+             از نوع 
+            string 
+        \item
+            \grayBox{Salary}
+            (حقوق ماهیانه)
+            از نوع
+            long
+        \item
+            \grayBox{University}
+            (دانشگاه)
+            از نوع
+            string
+        \end{itemize}
+        است.
+        پس هر پزشکی که وجود داشته باشد، الزاماً دارای ویژگی های ذکر شده هست.
+    \subsection{کلاس ها
+    \footnote{Classes}
+    }
+        \subsubsection{Patient}
+        هر بیمار منطقاً یک شخص حقیقی است و دارای ویژگی های مربوط به 
+        IPerson
+        است.
+        \\
+        هم چنین علاوه بر آنها دارای دو ویژگی 
+        \begin{itemize}
+        \item 
+            \grayBox{Disease}
+            (زمینه بیماری)
+        \item
+            \grayBox{Recovered}
+            (بهبودی)
+        \end{itemize}
+        نیز هست.
+        پس از پیاده سازی صحیح این کلاس به همراه سازنده اش،
+        تست
+        \grayBox{\textcolor{dkgreen}{PatientClassTests}}
+        پاس خواهد شد.
+        
+        \subsubsection{GeneralPractitioner}
+        هر پزشک عمومی منطقاً یک شخص حقیقی و یک پزشک است و دارای ویژگی های مربوط به 
+        واسط های گفته شده
+        است.
+        \\
+        هم چنین علاوه بر آنها دارای ویژگی 
+        \grayBox{Patients}
+        (بیماران تحت نظر )
+        نیز هست که از نوع لیستی از بیماران است.
+        \\
+        \\
+        \textbf{متدها}
+        \begin{itemize}
+        \item 
+            \grayBox{\textcolor{orange}{Acceptable}}
+            :
+            این متد
+            را به گونه ای پیاده سازی کنید که یک بیمار به عنوان ورودی بگیرد و اگر در زمینه بیماری آن فرد، 
+            کلید واژه هایی مانند 
+            \grayBox{\textcolor{red}{Cough}}
+            ،
+            \grayBox{\textcolor{red}{Sneezing}}
+            و
+            \grayBox{\textcolor{red}{throat Sore}}
+            بود؛ آن بیمار را به بیماران تحت نظر خود اضافه کند.
+            
+            پس از پیاده سازی صحیح این متد تست
+            \grayBox{\textcolor{dkgreen}{AddingPatientsToGeneralPractitioner}}
+            پاس خواهد شد.
+
+        \item
+            \grayBox{\textcolor{orange}{GraduatedFrom}}
+            :
+            این متد را بگونه ای پیاده سازی کنید که یک خروجی از نوع 
+            \grayBox{\textcolor{blue}{string}}
+            داشته باشد که؛
+            
+            با نام و نام خانوادگی پزشک شروع شود، سپس رشته 
+            \grayBox{{is graduated from}}
+            باشد و در انتها نیز دانشگاهی که آن پزشک در آن تحصیل کرده بیاید.
+            
+            پس از پیاده سازی صحیح این متد، تست
+            \grayBox{\textcolor{dkgreen}{GraduatingGenerals}}
+            پاس خواهد شد.
+            
+        \item
+            \grayBox{\textcolor{orange}{Work}}
+            :
+            این متد را بگونه ای پیاده سازی کنید که یک خروجی از نوع 
+            \grayBox{\textcolor{blue}{string}}
+            داشته باشد که؛
+            
+            با رشته
+            \grayBox{This General Practitioner works on}
+            شروع شود و در انتها نیز زمینه کاری آن پزشک مشخص شود.
+            
+            پس از پیاده سازی صحیح این متد، تست
+            \grayBox{\textcolor{dkgreen}{WorkingGenerals}}
+            پاس خواهد شد.
+        \end{itemize}
+        
+        \subsubsection{Dentist}
+        هر دندان پزشک منطقاً یک شخص حقیقی و یک پزشک است و دارای ویژگی های مربوط به 
+        واسط های گفته شده
+        است.
+        \\
+        هم چنین علاوه بر آنها دارای ویژگی 
+        \grayBox{Patients}
+        (بیماران تحت نظر )
+        نیز هست که از نوع لیستی از بیماران است.
+        \\
+        \\
+        \textbf{متدها}
+        \begin{itemize}
+        \item 
+            \grayBox{\textcolor{orange}{Acceptable}}
+            :
+            این متد
+            را به گونه ای پیاده سازی کنید که یک بیمار به عنوان ورودی بگیرد و اگر در زمینه بیماری آن فرد، 
+            کلید واژه هایی مانند 
+            \grayBox{\textcolor{red}{Toothache}}
+            ،
+            \grayBox{\textcolor{red}{Teeth}}
+            و
+            \grayBox{\textcolor{red}{Dental}}
+            بود؛ آن بیمار را به بیماران تحت نظر خود اضافه کند.
+            
+            پس از پیاده سازی صحیح این متد تست
+            \grayBox{\textcolor{dkgreen}{AddingPatientsToDentist}}
+            پاس خواهد شد.
+
+        \item
+            \grayBox{\textcolor{orange}{GraduatedFrom}}
+            :
+            این متد را بگونه ای پیاده سازی کنید که یک خروجی از نوع 
+            \grayBox{\textcolor{blue}{string}}
+            داشته باشد که؛
+            
+            با نام و نام خانوادگی پزشک شروع شود، سپس رشته 
+            \grayBox{{is graduated from}}
+            باشد و در انتها نیز دانشگاهی که آن پزشک در آن تحصیل کرده بیاید.
+            
+            پس از پیاده سازی صحیح این متد، تست
+            \grayBox{\textcolor{dkgreen}{GraduatingDentists}}
+            پاس خواهد شد.
+            
+        \item
+            \grayBox{\textcolor{orange}{Work}}
+            :
+            این متد را بگونه ای پیاده سازی کنید که یک خروجی از نوع 
+            \grayBox{\textcolor{blue}{string}}
+            داشته باشد که؛
+            
+            با رشته
+            \grayBox{This Dentist works on}
+            شروع شود و در انتها نیز زمینه کاری آن پزشک مشخص شود.
+            
+            پس از پیاده سازی صحیح این متد، تست
+            \grayBox{\textcolor{dkgreen}{WorkingDentists}}
+            پاس خواهد شد.
+        \end{itemize}
+        
+        \subsubsection{Surgeon}
+        هر جراح منطقاً یک شخص حقیقی و یک پزشک است و دارای ویژگی های مربوط به 
+        واسط های گفته شده
+        است.
+        \\
+        هم چنین علاوه بر آنها دارای ویژگی 
+        \grayBox{Patients}
+        (بیماران تحت نظر )
+        نیز هست که از نوع لیستی از بیماران است.
+        \\
+        \\
+        \textbf{متدها}
+        \begin{itemize}
+        \item 
+            \grayBox{\textcolor{orange}{Acceptable}}
+            :
+            این متد
+            را به گونه ای پیاده سازی کنید که یک بیمار به عنوان ورودی بگیرد و اگر در زمینه بیماری آن فرد، 
+            کلید واژه هایی مانند 
+            \grayBox{\textcolor{red}{Cancer}}
+            ،
+            \grayBox{\textcolor{red}{Appendix}}
+            و
+            \grayBox{\textcolor{red}{Kidney}}
+            بود؛ آن بیمار را به بیماران تحت نظر خود اضافه کند.
+            
+            پس از پیاده سازی صحیح این متد تست
+            \grayBox{\textcolor{dkgreen}{AddingPatientsToSurgeon}}
+            پاس خواهد شد.
+
+        \item
+            \grayBox{\textcolor{orange}{GraduatedFrom}}
+            :
+            این متد را بگونه ای پیاده سازی کنید که یک خروجی از نوع 
+            \grayBox{\textcolor{blue}{string}}
+            داشته باشد که؛
+            
+            با نام و نام خانوادگی جراح شروع شود، سپس رشته 
+            \grayBox{{is graduated from}}
+            باشد و در انتها نیز دانشگاهی که آن پزشک در آن تحصیل کرده بیاید.
+            
+            پس از پیاده سازی صحیح این متد، تست
+            \grayBox{\textcolor{dkgreen}{GraduatingSurgeons}}
+            پاس خواهد شد.
+            
+        \item
+            \grayBox{\textcolor{orange}{Work}}
+            :
+            این متد را بگونه ای پیاده سازی کنید که یک خروجی از نوع 
+            \grayBox{\textcolor{blue}{string}}
+            داشته باشد که؛
+            
+            با رشته
+            \grayBox{This Surgeon works on}
+            شروع شود و در انتها نیز زمینه کاری آن پزشک مشخص شود.
+            
+            پس از پیاده سازی صحیح این متد، تست
+            \grayBox{\textcolor{dkgreen}{WorkingSurgeons}}
+            پاس خواهد شد.
+        \end{itemize}
+        
+    \section{مجتمع}
+        حال که همه بخش های مختلف را پیاده سازی کردید، به مسئولین بیمارستان کمک کنید که اطلاعات پزشکان را به دست بیاورند.
+        از شما میخواهیم که به دیمو کمک کند تا کلاس 
+        \grayBox{Doctors}
+        را برای اقشار مختلف پزشکان پیاده سازی کنید.
+        
+        این کلاس
+        را به گونه ای پیاده سازی کنید که یک ویژگی به نام 
+        Doctor
+        از نوع لیست داشته باشد، و بتواند پزشکان را در خود ذخیره کند.
+        سپس برای آن دو متد زیر را پیاده سازی کنید:
+        \\
+        \begin{itemize}
+        \item 
+            \grayBox{\textcolor{orange}{ListOfRecoveredPatients}}
+            :
+            این متد را به گونه ای پیاده سازی کنید که بین
+            بیماران همه پزشکان که در ویژگی Doctor 
+            ذخیره شده اند، را بگردد و اسم کامل
+             بیمارانی که سلامتی خود را به طور کامل به دست آورده اند را بازگرداند.
+            پس از پیاده سازی صحیح این متد تست
+            \grayBox{\textcolor{dkgreen}{ListOfRecoveredPatientsTests}}
+            پاس خواهد شد.
+
+        \item
+            \grayBox{\textcolor{orange}{SortDoctors}}
+            :
+            این متد را به گونه ای پیاده سازی کنید که پزشکان ذخیره شده در Doctors را مرتب کند.
+            شیوه مرتب سازی هم به اینگونه است که ابتدا پزشکان بر حسب نسبت تعداد بیماران بهبود یافته به کل بیماران آن پزشک مرتب میشوند، و اگر دو پزشک با نسبت یکسان وجود داشت، آنها را بر حسب نام آن پزشک مرتب کند.        
+            
+            به طور مثال اگر پزشک شماره 1، پنج بیمار داشت دو بیمار بهبود یافته داشت، و پزشک شماره 2، سه بیمار و دو بیمار بهبود یافته داشت،
+            در خروجی نام و نام خانوادگی پزشک دوم زودتر از اولی می آید.
+            
+            پس از پیاده سازی صحیح این متد، تست
+            \grayBox{\textcolor{dkgreen}{SortingDoctorsTests}}
+            پاس خواهد شد.
+            
+        
+        \end{itemize}
+    \\
+    \\
+    \\
+    \\
+    

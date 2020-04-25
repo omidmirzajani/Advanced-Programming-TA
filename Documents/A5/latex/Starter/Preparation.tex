@@ -1,0 +1,50 @@
+
+    \section{آماده سازی های اولیه}
+    
+        \subsection{ساخت پروژه ی C\#}
+        برای ایجاد پروژه C\# کافی است کد زیر را در ترمینال خود اجرا کنید: 
+        \LTR
+        \begin{lstlisting}
+        mkdir A5_cs
+        cd A5_cs
+        dotnet new sln
+        mkdir A5_cs
+        cd A5_cs
+        dotnet new console
+        cd ..
+        dotnet sln add A5_cs\A5_cs.csproj
+        mkdir A5_cs.Tests
+        cd A5_cs.Tests
+        dotnet new mstest
+        dotnet add reference ..\A5_cs\A5_cs.csproj
+        cd ..
+        dotnet sln add A5_cs.Tests\A5_cs.Tests.csproj
+        
+        \end{lstlisting}
+    
+        \RTL
+        
+        \subsection{قواعد نام گذاری}
+        
+            قواعد نام‌گذاری تمرین را از جدول
+            \ref{table:namingConvention}
+            مطالعه کنید.
+            \begin{table}[ht]
+        	\centering
+        	\caption{\rl{قراردادهای نام‌گذاری تمرین}}\label{table:namingConvention}	\begin{latin}
+        	\begin{tabular}{|c|c|c|c|c|c|}
+        		\hline
+        		\rowcolor[HTML]{9698ED} 
+        		\multicolumn{3}{|c|}{\cellcolor{mygray} Naming conventions}             \\ \hline 
+        		Branch & Directory & Pull Request \\ \hline
+        		
+        		\texttt{fb\_A5} & \texttt{A5}        & \texttt{A5}          \\ \hline
+        	\end{tabular}
+            \end{latin}
+            \end{table}
+            \\
+            \grayBox{\textcolor{blue}{*}}
+            در کل یک دیرکتوری داخل Assignments به نام A5 بسازید و داخل آن،یک دیرکتوری به نام 
+            A5\_cs
+           داشته باشید و فایل های مربوطه را داخل دیرکتوری مربوطه بگذارید.
+    
