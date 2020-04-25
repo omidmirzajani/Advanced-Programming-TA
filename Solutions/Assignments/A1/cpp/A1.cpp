@@ -5,29 +5,17 @@
 using namespace std;
 
 namespace A1
-{
-    constexpr int MaximomValueImpl(int a, int b)
+{   
+    vector<int> v;
+    template<typename... T>
+    int MaximomValue(T ... nums)
     {
-        return a > b ? a : b;
-    }
-
-    template<typename ArgA, typename ArgB, typename Func>
-    constexpr auto foldl(Func func, ArgA a, ArgB b)
-    {
-        return func(a, b);
-    }
-
-    template<typename ArgA, typename ArgB,
-        typename Func, typename ...Args>
-        constexpr auto foldl(Func func, ArgA a, ArgB b, Args... args)
-    {
-        return foldl(func, func(a, b), args...);
-    }
-
-    template<typename ...Args>
-    constexpr auto MaximomValue(Args... args)
-    {
-        return foldl(MaximomValueImpl, args...);
+        (v.push_back(nums), ...);
+        int result = v[0];
+        for(int i=1;i<v.size();i++)
+            if(v[i]>result)
+                result=v[i];
+        return result;
     }
 
     bool findInt(int nums[],int numsLength,int v){
@@ -36,6 +24,7 @@ namespace A1
                 return true;
         return false;
     }
+
     vector<int> CommonIntegerElements(int nums1[] , int nums2[],int nums1Length,int nums2Length){
         sort(nums1, nums1+nums1Length); 
         sort(nums2, nums2+nums2Length); 
