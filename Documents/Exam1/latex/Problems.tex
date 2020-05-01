@@ -1,0 +1,389 @@
+\section{تشریح مسئله}
+حالا که 
+دیمو
+\footnote{Dimo}
+بسیار در امر برنامه نویسی ماهر شده است، می خواهد برنامه اسنپ را برای خود شبیه سازی کند.
+او که علاقه زیادی به برنامه نویسی شی گرا پیدا کرده، نقشه راه، یعنی اینترفیس ها و کلاس ها را یه خوبی شناسایی کرده، اما برای پیاده سازی به کمک شنا نیاز دارد.
+\\
+
+    \section{ILocatable}
+    چیزی که در برنامه های مسیریابی خیلی مهم است، موقعیت اماکن و افراد است. 
+    \\
+    لذا برای اجسامی که موقعیت(از نظر مکانی) دارند، این واسط استفاده خواهد شد.
+    این واسط شامل سه ویژگی 
+    \begin{itemize}
+        \item \grayBox{X} از نوع 
+            \grayBox{\textcolor{blue}{long}}
+        \item \grayBox{Y} از نوع 
+            \grayBox{\textcolor{blue}{long}}
+        \item \grayBox{Z} از نوع 
+            \grayBox{\textcolor{blue}{long}}
+    \end{itemize}
+    و متد
+    \grayBox{Distance()}
+    است که ورودی آن یک متغیر از نوع  
+    \grayBox{\textcolor{blue}{ILocatable}}
+    ،
+    و خروجی آن 
+    \grayBox{\textcolor{blue}{long}}
+    است.
+    پس از پیاده سازی صحیح این بخش، تست های 
+    \grayBox{\textcolor{dkgreen}{ILocatablePropertyTest}}
+    و 
+    \grayBox{\textcolor{dkgreen}{ILocatableMethodTest}}
+    پاس خواهند شد.
+    
+    \section{IPerson}
+    این واسط برای اشخاص به کار می رود و 
+    شامل دو ویژگی 
+    \begin{itemize}
+        \item \grayBox{Firstname} از نوع 
+            \grayBox{\textcolor{blue}{string}}
+        \item \grayBox{Lastname} از نوع 
+            \grayBox{\textcolor{blue}{string}}
+    \end{itemize}
+    است.
+    پس از پیاده سازی صحیح این بخش، تست های 
+    \grayBox{\textcolor{dkgreen}{IPersonPropertyTest}}
+    و
+    پاس خواهند شد.
+    
+    \section{Place}
+     این کلاس برای پیاده سازی
+    مکان های مختلف نقشه به کار می رود و علاوه بر ویژگی های 
+    اینترفیس
+    \grayBox{ILocatable}
+    ، 
+    یک ویژگی دیگر به نام 
+    \grayBox{Name}
+    از نوع
+    \grayBox{\textcolor{blue}{string}}
+    دارد.
+    \\
+     با پیاده سازی صحیح سازنده این کلاس، تست های 
+    \grayBox{\textcolor{dkgreen}{PlaceInheritedTest}}
+    و
+    \grayBox{\textcolor{dkgreen}{PlaceConstructorTest}}
+    پاس خواهند شد.
+    \\
+    سپس متد 
+    \grayBox{Distance}
+    را به گونه ای پیاده سازی کنید که فاصله خودش را از ورودی حساب کند.
+    پس از پیاده سازی صحیح این بخش، تست 
+    \grayBox{\textcolor{dkgreen}{PlaceDistanceTest}}
+    نیز پاس خواهد شد.
+    
+    \section{Traffic}
+    این کلاس برای پیاده سازیِ سفرهای رفته شده توسط مشتریان ایجاد شده است.
+    این کلاس شامل دو ویژگی 
+    \begin{itemize}
+        \item \grayBox{source} از نوع 
+            \grayBox{\textcolor{blue}{Place}}
+        \item \grayBox{target} از نوع 
+            \grayBox{\textcolor{blue}{Place}}
+    \end{itemize}
+    است که مکان مبدأ و مقصد سفر را مشخص می کند.
+    \\
+    پس از پیاده سازی صحیح این کلاس به همراه سازنده اش، تست
+    \grayBox{\textcolor{dkgreen}{TrafficConstructorTest}}
+    پاس خواهد شد.
+    
+    \section{Customer}
+    این کلاس برای پیاده سازی مشتریان برنامه اسنپ به کار می رود  
+    که منطقاً 
+    هر فردی که از این برنامه استفاده میکند باید اولاً شخص باشد، دوماً موقعیت مکانی داشته باشد.
+    این کلاس علاوه بر ویژگی های اینترفیس های 
+    \grayBox{IPerson}
+    و
+    \grayBox{ILocatable}
+    ،
+    شامل دو ویژگی 
+    \begin{itemize}
+        \item \grayBox{accountBalance} از نوع 
+            \grayBox{\textcolor{blue}{long}}
+        \item \grayBox{History} از نوع 
+            \grayBox{\textcolor{blue}{List<Traffic>}}
+    \end{itemize}
+    است که 
+    \grayBox{History}
+    اطلاعات سفرهایی که آن مشتری تا بحال رفته را در خود ذخیره میکند و \grayBox{accountBalance} موجودی حساب کاربری آن کاربر است.
+    \subsection{Constructor}
+    برای پیاده سازی سازنده این کلاس، دقت کنید که ورودی اول،
+    یک رشته شامل نام و نام خانوادگی است.
+    \\
+    همچنین مقادیر
+    پیشفرض \grayBox{accountBalance} , 
+    \grayBox{History}
+    به ترتیب 0 و یک لیست خالی خواهد بود.
+    پس از پیاده سازی صحیح این کلاس و سازنده اش، تست های 
+    \grayBox{\textcolor{dkgreen}{CustomerInheritedInterfacesTest}}
+    و
+    \grayBox{\textcolor{dkgreen}{CustomerConstructorTest}}
+    پاس خواهند شد.
+    
+    \subsection{+ Operator}
+    برای این کلاس عملگر + را به گونه ای طراحی کنید که وقتی آن را با یک عدد جمع زدیم، موجودی حساب کاربر را به همان مقدار اضافه کند.
+    پس از پیاده سازی صحیح این بخش، 
+    تست
+    \grayBox{\textcolor{dkgreen}{CustomerChargeAccountTest}}
+    پاس خواهد شد.
+    
+    \subsection{Distance}
+    این متد را به گونه ای پیاده کنید که
+    مانند قبل، فاصله خودش را تا مکان ورودی حساب کند.
+    پس از پیاده سازی این بخش، تست 
+    \grayBox{\textcolor{dkgreen}{CustomerDistanceTest}}
+    پاس خواهد شد.
+    
+    \subsection{Enumerable}
+    به این کلاس، هر آنچه نیاز است اضافه کنید تا تست 
+    \grayBox{\textcolor{dkgreen}{CustomerIEnumerableTest}}
+    پاس شود.
+    هدف از این تست آن است که وقتی یک حلقه تکرار روی آن میزنیم، سفرهای رفته شده که در \grayBox{History} ذخیره شده اند، به صورت رشته هایی برگرداند که با نام مبدأ شروع شوند و در انتها نیز نام مقصد باشد و نیز بین این دو با یک کاراکتر  ':' از هم جدا شوند.
+    تست ها مسأله را شفاف تر میکنند.
+    
+\section{IDriver}
+این واسط برای پیاده سازی راننده های شرکت طراحی شده است و شامل ویژگی های 
+    \begin{itemize}
+        \item \grayBox{Color} از نوع 
+            \grayBox{\textcolor{blue}{Color}}
+            که رنگ آن وسیله نقلیه را مشخص میکند
+        \item \grayBox{History} از نوع 
+            \grayBox{\textcolor{blue}{List<Traffic>}}
+    \end{itemize}
+    و متد 
+    GoToTarget
+    است که دو ورودی به ترتیب از نوع 
+    \grayBox{\textcolor{blue}{Customer}}
+    و
+    \grayBox{\textcolor{blue}{ILocatable}}
+    میگیرد و خروجی ندارد.
+    پس از پیاده سازی صحیح این بخش،
+    تست های 
+    \grayBox{\textcolor{dkgreen}{IDriverPropertyTest}}
+    و
+    \grayBox{\textcolor{dkgreen}{IDriverMethodTest}}
+    پاس خواهند شد.
+    
+    \newpage
+    
+\section{CarDriver}
+    \subsection{Constructor}
+    همانطور که از معنا مشخص است، یک راننده اتومبیل، دارای ویژگی های 
+    \grayBox{ILocatable}
+    و
+    \grayBox{IPerson}
+    و
+    \grayBox{IDriver}
+    است.
+     این کلاس را به همراه سازنده اش پیاده کنید تا تست های
+    \grayBox{\textcolor{dkgreen}{CarDriverInheritedInterfacesTest}}
+    و
+    \grayBox{\textcolor{dkgreen}{CarDriverConstructorTest}}
+    پاس شود.
+    
+    \subsection{VehicleColor}
+    متد 
+    \grayBox{VehicleColor}
+    را برای این کلاس به گونه ای پیاده سازی کنید که خروجی از نوع
+    \grayBox{\textcolor{blue}{string}}
+    داشته باشد که با نام راننده شروع شود،سپس پس از عبارت
+    \grayBox{has a}
+    رنگ وسیله و سپس نوع وسیله نقلیه بیاید.
+    \\
+    پس از پیاده سازی این بخش، تست 
+    \grayBox{\textcolor{dkgreen}{CarDriverVehicleTest}}
+    پاس خواهد شد.
+    
+    \subsection{Distance}
+    متد 
+    \grayBox{Distance}
+    را برای این کلاس به گونه ای پیاده سازی کنید که 
+    مانند قبل، فاصله خودش را تا مکان ورودی حساب کند.
+    پس از پیاده سازی این بخش، تست 
+    \grayBox{\textcolor{dkgreen}{CarDriverDistanceTest}}
+    پاس خواهد شد.
+    
+    \subsection{GoToTarget}
+    این متد اصولاً برای پیاده سازیِ انجام سفر ها طراحی شده است. به کمک آن دو ورودی به ترتیب از نوع
+    \grayBox{Customer}
+    و
+    \grayBox{ILocatable}
+    گرفته میشود 
+    که مشخص کننده مسافر و مقصد است.
+    به ازای هر سفری که انجام میشود، از موجودی حساب آن کاربر، مقداری کم خواهد شد.
+    این مقدار از حاصل ضرب مسافت بین مبدأ و مقصد در 3000 به دست خواهد آمد.
+     پس از پیاده سازی صحیح این بخش، تستِ    \grayBox{\textcolor{dkgreen}{CarDriverGoToTargetTest}}
+    پاس خواهد شد.
+    \\
+    همچنین منطقاً پس از انجام سفر، موقعیت مسافر و راننده، به موقعیت مقصد تغییر خواهد کرد.
+    پس از پیاده سازی صحیح این بخش، تستِ    \grayBox{\textcolor{dkgreen}{CarDriverLocationTest}}
+    پاس خواهد شد.
+    
+    امّا نکته ای که باید به آن توجه کرد، این است که سفر تنها در صورتی انجام میگیرد، که کابر، موجودی حسابی کافی برای انجام آن سفر را داشته باشد.
+    پس به متد، این قسمت را اضافه کنید که اگر شرایط انجام سفر نبود، استثنایی از نوع 
+     \grayBox{\textcolor{blue}{StackOverflowException}}
+    رخ دهد.
+     پس از پیاده سازی صحیح این بخش، تستِ    \grayBox{\textcolor{dkgreen}{CarDriverExceptionTest}}
+    پاس خواهد شد.
+    
+     
+    \subsection{+ Operator}
+    برای این کلاس عملگر + را به گونه ای طراحی کنید که وقتی آن را با یک Traffic جمع زدیم،
+    آن سفر را به لیست سفرهای انجام شده خود اضافه کند.
+    پس از پیاده سازی صحیح این بخش، تستِ    
+    \grayBox{\textcolor{dkgreen}{CarDriverOperatorTest}}
+    پاس خواهد شد.
+
+\section{TruckDriver}
+    \subsection{Constructor}
+    همانطور که از معنا مشخص است، یک راننده کامیون، دارای ویژگی های 
+    \grayBox{ILocatable}
+    و
+    \grayBox{IPerson}
+    و
+    \grayBox{IDriver}
+    است.
+     این کلاس را به همراه سازنده اش پیاده کنید تا تست های
+    \grayBox{\textcolor{dkgreen}{TruckDriverInheritedInterfacesTest}}
+    و
+    \grayBox{\textcolor{dkgreen}{TruckDriverConstructorTest}}
+    پاس شود.
+    
+    \subsection{VehicleColor}
+    متد 
+    \grayBox{VehicleColor}
+    را برای این کلاس به گونه ای پیاده سازی کنید که خروجی از نوع
+    \grayBox{\textcolor{blue}{string}}
+    داشته باشد که با نام راننده شروع شود،سپس پس از عبارت
+    \grayBox{has a}
+    رنگ وسیله و سپس نوع وسیله نقلیه بیاید.
+    \\
+    پس از پیاده سازی این بخش، تست 
+    \grayBox{\textcolor{dkgreen}{TruckDriverVehicleTest}}
+    پاس خواهد شد.
+    
+    \subsection{Distance}
+    متد 
+    \grayBox{Distance}
+    را برای این کلاس به گونه ای پیاده سازی کنید که 
+    مانند قبل، فاصله خودش را تا مکان ورودی حساب کند.
+    پس از پیاده سازی این بخش، تست 
+    \grayBox{\textcolor{dkgreen}{TruckDriverDistanceTest}}
+    پاس خواهد شد.
+    
+    \subsection{GoToTarget}
+    این متد مانند کلاس
+    \grayBox{CarDriver}
+    پیاده سازی خواهد شد تنها با این تفاوت که قیمت مسیر را باید با نرخ 7200 حساب کنید.
+    پس از پیاده سازی صحیح، تست های 
+    \grayBox{\textcolor{dkgreen}{TruckDriverGoToTargetTest}}
+    \grayBox{\textcolor{dkgreen}{TruckDriverLocationTest}}
+    \grayBox{\textcolor{dkgreen}{TruckDriverExceptionTest}}
+    پاس خواهد شد.
+    
+    
+\section{MotorCycleDriver}
+    \subsection{Constructor}
+    همانطور که از معنا مشخص است، یک راننده موتور سیکلت، دارای ویژگی های 
+    \grayBox{ILocatable}
+    و
+    \grayBox{IPerson}
+    و
+    \grayBox{IDriver}
+    است.
+     این کلاس را به همراه سازنده اش پیاده کنید تا تست های
+    \grayBox{\textcolor{dkgreen}{MotorCycleInheritedInterfacesTest}}
+    و
+    \grayBox{\textcolor{dkgreen}{MotorCycleConstructorTest}}
+    پاس شود.
+    
+    \subsection{VehicleColor}
+    متد 
+    \grayBox{VehicleColor}
+    را برای این کلاس به گونه ای پیاده سازی کنید که خروجی از نوع
+    \grayBox{\textcolor{blue}{string}}
+    داشته باشد که با نام راننده شروع شود،سپس پس از عبارت
+    \grayBox{has a}
+    رنگ وسیله و سپس نوع وسیله نقلیه بیاید.
+    \\
+    پس از پیاده سازی این بخش، تست 
+    \grayBox{\textcolor{dkgreen}{MotorCycleVehicleTest}}
+    پاس خواهد شد.
+    
+    \subsection{Distance}
+    متد 
+    \grayBox{Distance}
+    را برای این کلاس به گونه ای پیاده سازی کنید که 
+    مانند قبل، فاصله خودش را تا مکان ورودی حساب کند.
+    پس از پیاده سازی این بخش، تست 
+    \grayBox{\textcolor{dkgreen}{MotorCycleDistanceTest}}
+    پاس خواهد شد.
+    
+    \subsection{GoToTarget}
+    این متد مانند کلاس
+    \grayBox{CarDriver}
+    پیاده سازی خواهد شد تنها با این تفاوت که قیمت مسیر را باید با نرخ 3500 حساب کنید.
+    پس از پیاده سازی صحیح، تست های 
+    \grayBox{\textcolor{dkgreen}{MotorCycleGoToTargetTest}}
+    \grayBox{\textcolor{dkgreen}{MotorCycleLocationTest}}
+    \grayBox{\textcolor{dkgreen}{MotorCycleExceptionTest}}
+    پاس خواهد شد.
+\section{Management}
+مدیر پروژه خواسته که این کلاس به صورتی پیاده سازی شود که به نوعی راننده ها از هم تفکیک شود یعنی راننده های ماشین از راننده های موتور و کامیون جدا باشند.
+\\
+برای ایجاد چنین مفهمومی، برای این کلاس یک ویژگی  به نام \grayBox{Drivers} تعریف کنید، که اولاً از نوع آرایه باشد، دوماً قابلیت ذخیره رانندگان را داشته باشد.(جهت یادآوری: رانندگان دارای خواص 
+\grayBox{IDriver}
+,
+\grayBox{IPerson}
+,
+\grayBox{ILocatable}
+بودند.)
+\\
+\subsection{SortDrivers}
+متد 
+\grayBox{\textcolor{blue}{SortDrivers}}
+را به گونه ای پیاده سازی کنید که اگر در 
+\grayBox{Drivers}
+رانندگان اتومبیل ذخیره شده بود، آنان را بر اساس میزان مسافتی که در سفرها طی کرده اند، مرتب کند.
+پس از پیاده سازی صحیح تست 
+\grayBox{\textcolor{dkgreen}{SortCarDriversTest}}
+پاس خواهد شد.
+\\
+اگر
+رانندگان موتور سیکلت ذخیره شده بود، آنان را بر اساس حروف الفبایی نام خانوادگی شان مرتب کند
+ پس از پیاده سازی صحیح تست 
+\grayBox{\textcolor{dkgreen}{SortMotorCycleDriversTest}}
+پاس خواهد شد.
+\\
+رانندگان کامیون ذخیره شده بود، آنان را بر اساس حروف الفبایی نام شان مرتب کند
+پس از پیاده سازی صحیح تست 
+\grayBox{\textcolor{dkgreen}{SortTruckDriversTest}}
+پاس خواهد شد.
+\subsection{Tracing}
+شرکت برای ردیابی رانندگانش نیاز دارد هر لحظه، بداند که رانندگانش در چه موقعیتی هستند.
+برای همین از شما خواسته اند که متد 
+\grayBox{\textcolor{blue}{WhereIsNow}}
+را بگونه ای پیاده سازی کنید که با فراخوانی آن، یک آرایه از نوع رشته برگرداند و درآن موقعیت همه رانندگان به صورت یک رشته که با نام آن راننده شروع میشود و موقعیت Xِ آن راننده را اطلاع میدهد. خواندن تست، مسأله را شفاف تر میکند.
+
+\subsection{Nearest}
+شرکت برای ردیابی رانندگانش نیاز دارد هر لحظه، بداند که رانندگانش در چه موقعیتی هستند.
+برای همین از شما خواسته اند که متد 
+\grayBox{\textcolor{blue}{WhereIsNow}}
+را بگونه ای پیاده سازی کنید که با فراخوانی آن، یک آرایه از نوع رشته برگرداند و درآن موقعیت همه رانندگان به صورت یک رشته که با نام آن راننده شروع میشود و موقعیت Xِ آن راننده را اطلاع میدهد. خواندن تست، مسأله را شفاف تر میکند.
+\\
+پس از پیاده سازی صحیح، تستِ 
+\grayBox{\textcolor{dkgreen}{WhereIsDriversTest}}
+پاس خواهد شد.
+\subsection{Nearest}
+برای اینکه هزینه های شرکت به حداقل برسد، نیاز است که وقتی کسی درخواست سفر داد، نزدیک ترین راننده به کاربر، او را سوار کند.
+پس برای کمک به ما یک متد به نام
+\grayBox{\textcolor{blue}{NearestDriver}}
+بنویسید که دو ورودی از نوع
+\grayBox{\textcolor{blue}{Customer}}
+و 
+\grayBox{\textcolor{blue}{Place}}
+داشته باشد و کاربر را به مقصد برساند.
+ پس از پیاده سازی صحیح، تست
+\grayBox{\textcolor{dkgreen}{NearestTest}}
+پاس خواهد شد.
