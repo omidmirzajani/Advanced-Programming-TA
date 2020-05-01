@@ -1,0 +1,106 @@
+
+    \section{
+    مسائل بامزه
+    \grayBox{\textcolor{purple}{C\#}}
+    }
+    همانطور که 
+    \textbf{دیمو}
+    \footnote{Dimo}
+    را میشناسید، به تازگی علاقه مند به صنعت کامپیوتر شده است و مانند بقیه برای پیشرفت اوضاع درسی خود، در حال تمرین برنامه نویسی است. به او کمک کنید تا تکلیف خود را انجام دهد.
+    \subsection{
+    Reversing
+    }
+        متد
+        \grayBox{\textcolor{blue}{Reverse}}
+        را در کلاس Program
+         به گونه ای پیاده سازی کنید، که یک آرایه بگیرد و آن را برعکس کند.
+        به طور مثال اگر ورودی شامل اعداد (1و4و5و2و3) باشد، خروجی باید (3و2و5و4و1) باشد.
+        دقت کنید که این متد باید برای همه انواع داده ای کار کند.
+        \footnote{Method Generic}
+        \\
+        پس از پیاده سازی صحیح تست های 
+        \grayBox{\textcolor{dkgreen}{ReverseIntTest}}
+        و
+        \grayBox{\textcolor{dkgreen}{ReverseStringTest}}
+        پاس خواهند شد.
+        
+    \subsection{Class / Interface
+    }
+        \subsubsection{IPlayer}
+        اینترفیس 
+        IPlayer
+        را به گونه ای پیاده سازی کنید که شامل ویژگی های 
+        \begin{itemize}
+            \item \grayBox{height} از نوع \grayBox{\textcolor{blue}{bool}}
+            \item \grayBox{speed} از نوع \grayBox{\textcolor{blue}{bool}}
+        \end{itemize}
+        و متد
+        \grayBox{Post()}
+        با نوع خروجی 
+        \grayBox{\textcolor{blue}{string}}
+        باشد.
+        \\
+        پس از پیاده سازی صحیح تست 
+        \grayBox{\textcolor{dkgreen}{IPlayerTest}}
+        پاس خواهند شد.
+        
+        \subsubsection{Athlete}
+        کلاس 
+        Athlete
+        را به گونه ای پیاده سازی کنید که اولاً یک Player باشد، یعنی ویژگی ها و متدهای IPlayer را دارا باشد.
+        و هم چنین علاوه بر آن دارای یک  ویژگی به نام 
+        \grayBox{name}
+        از نوع
+        \grayBox{\textcolor{blue}{string}}
+        و متد
+        \grayBox{Post()}
+        با نوع خروجی 
+        \grayBox{\textcolor{blue}{string}}
+        باشد.
+        \\
+        ابتدا سازنده این کلاس را تکمیل کنید و با پیاده سازی صحیح آن، تست 
+        \grayBox{\textcolor{dkgreen}{AthleteCostructorTest}}
+        پاس خواهد شد.
+        \\
+        سپس متد 
+        \grayBox{Post()}
+        را به گونه ای پیاده سازی کنید که مشخص کنید این ورزشکار برای چه ورزشی مناسب است.
+        \begin{itemize}
+            \item اگر فرد قد بلند و سرعت بالایی داشت، برای بسکتبال مناسب است.
+            
+            \item اگر فرد فقط قد بلندی داشت، برای والیبال مناسب است.
+            
+            \item اگر فرد فقط سرعت بالایی داشت، برای دویدن مناسب است.
+            
+            \item اگر فرد هیچ یک از دو ویژگی ذکر شده را نداشت، برای کشتی مناسب است.
+        \end{itemize}
+        هم چنین دقت کنید که خروجی داده شده باید به صورتِ
+        نامِ فرد در ابتدای رشته و سپس عبارت 
+        \grayBox{is appropriate for}
+        و سپس رشته ورزشی مناسب آن شخص باشد.
+        پس از پیاده سازی صحیح تست 
+        \grayBox{\textcolor{dkgreen}{AthletePost}}
+        پاس خواهند شد.
+    \subsection{Exceptions}
+    خواندن متون فینگیلیش یکی از معضلات دیمو شده است و میخواهد کلماتی که دارای حروف صدادار نیستد را شناسایی کند.
+    \\
+    متد 
+    \grayBox{Vowels}
+    را در کلاس Program
+    به گونه ای پیاده سازی کنید
+    که یک ورودی از نوع رشته بگیرد و اگر آن رشته شامل حروف صدادار بود، استثنایی از نوع 
+    \grayBox{FormatException}
+    پرتاب کند. در غیر این صورت رشته 
+    \grayBox{ Not Found!}
+    را به عنوان خروجی بازگرداند.
+    \\
+    پس از پیاده سازی صحیح، تست های 
+    \grayBox{\textcolor{dkgreen}{VowelSound}}
+    و
+    \grayBox{\textcolor{dkgreen}{VowelNotFound}}
+    پاس خواهند شد.
+    \\
+    \\
+    \\
+    \\
+    

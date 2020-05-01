@@ -1,0 +1,52 @@
+
+    \section{آماده سازی های اولیه}
+    
+        \subsection{ساخت پروژه ی C\#}
+        برای ایجاد پروژه C\# کافی است کد زیر را در ترمینال خود اجرا کنید: 
+        \LTR
+        \begin{lstlisting}
+        mkdir Exam1_cs
+        cd Exam1_cs
+        dotnet new sln
+        mkdir Exam1_cs
+        cd Exam1_cs
+        dotnet new console
+        cd ..
+        dotnet sln add Exam1_cs\Exam1_cs.csproj
+        mkdir Exam1_cs.Tests
+        cd Exam1_cs.Tests
+        dotnet new mstest
+        dotnet add reference ..\Exam1_cs\Exam1_cs.csproj
+        cd ..
+        dotnet sln add Exam1_cs.Tests\Exam1_cs.Tests.csproj
+        
+        \end{lstlisting}
+    
+        \RTL
+        
+        \subsection{قواعد نام گذاری}
+        
+            قواعد نام‌گذاری تمرین را از جدول
+            \ref{table:namingConvention}
+            مطالعه کنید.
+            \begin{table}[ht]
+        	\centering
+        	\caption{\rl{قراردادهای نام‌گذاری تمرین}}\label{table:namingConvention}	\begin{latin}
+        	\begin{tabular}{|c|c|c|c|c|c|}
+        		\hline
+        		\rowcolor[HTML]{9698ED} 
+        		\multicolumn{3}{|c|}{\cellcolor{mygray} Naming conventions}             \\ \hline 
+        		Branch & Directory & Pull Request \\ \hline
+        		
+        		\texttt{fb\_Exam1B} & \texttt{Exam1B}        & \texttt{Exam1B}          \\ \hline
+        	\end{tabular}
+            \end{latin}
+            \end{table}
+            \\
+            \grayBox{\textcolor{blue}{*}}
+            در کل یک دیرکتوری داخل Assignments به نام Exam1 بسازید و داخل آن،دو فولدر به نام های 
+            Exam1B
+            و
+            Exam1
+            داشته باشید و فایل های مربوطه را داخل دیرکتوری مربوطه بگذارید.
+    
