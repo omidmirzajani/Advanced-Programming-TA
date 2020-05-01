@@ -29,6 +29,6 @@ Instractor: [Sauleh Eetemadi](http://sauleh.github.io/)
 # Exams
 ## E1 (Object Oriented Programming)
   + [Document](https://github.com/omidmirzajani/Advanced-Programming-TA/blob/master/Documents/Exam1B)
-  + [Solution](https://github.com/omidmirzajani/Advanced-Programming-TA/blob/master/Solutions/Exam/Exam1b)
+  + [Solution](https://github.com/omidmirzajani/Advanced-Programming-TA/blob/master/Solutions/Exam/Exam1B)
   + [Document](https://github.com/omidmirzajani/Advanced-Programming-TA/blob/master/Documents/Exam1)
   + [Solution](https://github.com/omidmirzajani/Advanced-Programming-TA/blob/master/Solutions/Exam/Exam1_cs)
